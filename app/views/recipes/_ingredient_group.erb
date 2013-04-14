@@ -1,1 +1,2 @@
-<i><%= group.description %></i>
+<li class="group"><i><%= group.description %></i></li>
+<%= render partial: 'ingredients', locals: {ingredients: group.ingredients} %>
