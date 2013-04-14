@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     if params[:download]
       @export = true
+      prepend_view_path "#{Rails.root}/app/views/themes/export"
       send_data(render_to_string(layout: 'export'), filename: export_filename(@recipe), type: 'text/html')
     else
       render

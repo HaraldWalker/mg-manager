@@ -1,0 +1,33 @@
+<% provide(:title, @recipe.name ) %>
+<h2><%= @recipe.name %></h2>
+<div class="summary">
+  <%= @recipe.summary %>
+</div>
+
+<div id="image">[image]</div>
+
+<div class="box" id="ingredients">
+    <h3>Ingredients</h3>
+    <ul>
+    <%= render partial: 'ingredients', locals: {ingredients: @recipe.ingredients} %>
+    </ul>
+    <div id="servings">
+        <strong>Servings/yield:</strong> <%= @recipe.servings if @recipe.yield.empty? %><%= @recipe.yield unless @recipe.yield.empty? %>
+    </div>
+</div>
+
+<div class="box" id="directions">
+    <h3>Directions</h3>
+    <%= render partial: 'directions' %>
+    <% unless @recipe.recipe_notes.empty? %>
+</div>
+
+<div id="notes">
+    <h3>Notes</h3>
+    <%= render partial: 'recipe_notes', locals: {notes: @recipe.recipe_notes} %>
+    <% end %>
+</div>
+
+<% unless @export %>
+  <%= link_to 'download this page', recipe_path(@recipe, :download => true) %>
+<% end %>
