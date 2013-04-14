@@ -1,0 +1,8 @@
+== MG-Manager
+
+Simple rails app to perform actions on a MacGourmet 3 database.
+As MacGourmet stores the data in a sqlite3 database we can directly access the data.
+
+== Configuration
+
+Set the correct path to your MacGourmet 3 database file in database.yml.

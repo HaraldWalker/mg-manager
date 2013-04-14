@@ -1,0 +1,7 @@
+  <% @recipe.ingredients.each do |ingredient| %>
+      <% if ingredient.is_divider? %>
+          <%= render partial: 'ingredient_group', locals: {group: ingredient} %>
+      <% else %>
+          <%= render partial: 'ingredient', locals: {ingredient: ingredient} %>
+      <% end %>
+  <% end %>

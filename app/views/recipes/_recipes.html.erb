@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.name %></td>
+        <td><%= link_to 'show', recipe_url(recipe) %></td>
+      </tr>
+  <% end %>
+</table>

@@ -1,0 +1,5 @@
+<ol>
+  <% @recipe.directions.each do |direction| %>
+    <li><%= direction.directions_text %></li>
+  <% end %>
+</ol>

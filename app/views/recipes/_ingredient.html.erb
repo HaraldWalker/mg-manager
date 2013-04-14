@@ -1,0 +1,8 @@
+<li>
+  <%= ingredient.quantity %>
+  <%= ingredient.measurement %>
+  <%= ingredient.description %>
+  <% unless ingredient.direction.empty? %>
+      <%= ", #{ingredient.direction}" %>
+  <% end %>
+</li>
