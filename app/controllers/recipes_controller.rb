@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
 
   private
   def export_filename(recipe)
-    recipe.name.gsub(/ /,'').underscore + '.html'
+    recipe.name.gsub(/ /,'_').underscore + '.html'
   end
 
 end
