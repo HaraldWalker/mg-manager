@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+     <title><%= content_for?(:title) ? yield(:title) : "MgManager" %></title>
+     </head>
+  <body>
+    <div class="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>
