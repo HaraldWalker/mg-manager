@@ -3,3 +3,5 @@
 <%= render partial: 'ingredients', locals: {ingredients: @recipe.ingredients} %>
 <h3>Directions</h3>
 <%= render partial: 'directions' %>
+<h3>Notes</h3>
+<%= render partial: 'recipe_notes', locals: {notes: @recipe.recipe_notes} %>

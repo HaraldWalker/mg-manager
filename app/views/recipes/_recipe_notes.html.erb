@@ -1,0 +1,5 @@
+<% notes.each do |note| %>
+<div class=" <%= note.note_type.name.gsub(/ /,'').underscore %>">
+  <%= note.note_text %>
+</div>
+<% end %>
