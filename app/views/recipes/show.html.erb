@@ -1,4 +1,7 @@
 <h2><%= @recipe.name %></h2>
+<div class="summary">
+  <%= @recipe.summary %>
+</div>
 <h3>Ingredients</h3>
 <%= render partial: 'ingredients', locals: {ingredients: @recipe.ingredients} %>
 <h3>Directions</h3>
