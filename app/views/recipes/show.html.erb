@@ -2,9 +2,13 @@
 <div class="summary">
   <%= @recipe.summary %>
 </div>
+<h3>Servings/yield</h3>
+<%= @recipe.servings if @recipe.yield.empty? %><%= @recipe.yield unless @recipe.yield.empty? %>
 <h3>Ingredients</h3>
 <%= render partial: 'ingredients', locals: {ingredients: @recipe.ingredients} %>
 <h3>Directions</h3>
 <%= render partial: 'directions' %>
+<% unless @recipe.recipe_notes.empty? %>
 <h3>Notes</h3>
 <%= render partial: 'recipe_notes', locals: {notes: @recipe.recipe_notes} %>
+<% end %>
