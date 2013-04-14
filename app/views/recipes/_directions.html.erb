@@ -1,5 +1,9 @@
 <ol>
   <% @recipe.directions.each do |direction| %>
-    <li><%= direction.directions_text %></li>
+    <li>
+      <% unless direction.label_text.empty? %>
+        <em><%= direction.label_text %>:</em></br>
+      <% end %>
+      <%= direction.directions_text %></li>
   <% end %>
 </ol>
