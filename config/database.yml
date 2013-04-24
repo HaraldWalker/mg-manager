@@ -5,8 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: sqlite3
-  database: /Users/harald/Documents/MacGourmet3Database.mgdatabase/MacGourmet.mgdb
-  #database: db/development.sqlite3
+  database: <%= ENV['DATABASE'] ||= "#{ENV['HOME']}/Documents/MacGourmet3Database.mgdatabase/MacGourmet.mgdb" %>
   pool: 5
   timeout: 5000
 
