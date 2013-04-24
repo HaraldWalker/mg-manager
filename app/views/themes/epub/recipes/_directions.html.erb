@@ -1,0 +1,14 @@
+<table>
+  <% @recipe.directions.each do |direction| %>
+      <tr>
+        <%# Android ePub eBook reader doesn't display ordered lists correctly, so we have to create our own list view %>
+        <td class="dir-number"><%= direction.sort_order + 1 %>.</td>
+        <td class="dir-text">
+          <% unless direction.label_text.empty? %>
+              <em><%= direction.label_text %>:</em></br>
+          <% end %>
+          <%= direction.directions_text %>
+  <% end %>
+  </td>
+  </tr>
+</table>

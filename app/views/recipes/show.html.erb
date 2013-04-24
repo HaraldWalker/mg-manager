@@ -13,5 +13,6 @@
 <%= render partial: 'recipe_notes', locals: {notes: @recipe.recipe_notes} %>
 <% end %>
 <% unless @export %>
-  <%= link_to 'download this page', recipe_path(@recipe, :download => true) %>
+  <%= link_to 'download this page for web', recipe_path(@recipe, :download => true, target: 'web') %> |
+  <%= link_to 'download this page for ePub', recipe_path(@recipe,:download => true, target: 'epub') %>
 <% end %>

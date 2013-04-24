@@ -3,8 +3,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     if params[:download]
       @export = true
-      prepend_view_path "#{Rails.root}/app/views/themes/export"
-      send_data(render_to_string(layout: 'export'), filename: export_filename(@recipe), type: 'text/html')
+      @recipe_name = @recipe.name.gsub(/ /,'_').underscore
+      prepend_view_path "#{Rails.root}/app/views/themes/#{params[:target]}"
+      send_data(render_to_string(layout: params[:target]), filename: export_filename(@recipe_name, params[:target]), type: 'text/html')
     else
       render
     end
@@ -15,8 +16,8 @@ class RecipesController < ApplicationController
   end
 
   private
-  def export_filename(recipe)
-    recipe.name.gsub(/ /,'_').underscore + '.html'
+  def export_filename(recipe, format)
+    "#{@recipe_name}_#{format}.html"
   end
 
 end
